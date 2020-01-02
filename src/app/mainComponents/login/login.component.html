@@ -1,0 +1,23 @@
+<div class="login-form">
+    <form #loginfForm="ngForm" name="form" novalidate (ngSubmit)="loginfForm.valid && userLogin(login)">
+        <div class="text-input form-group" [class.has-error]="loginfForm.submitted && usernamectrl.invalid">
+            <mat-form-field class="col-md-12">
+                <input type="email" matInput placeholder="Email" autocomplete="off" [(ngModel)]="login.username"
+                    name="username" required #usernamectrl="ngModel">
+            </mat-form-field>
+            <span class="help-block col-md-12 error-msg" *ngIf="loginfForm.submitted && usernamectrl.errors?.required">
+                Username is required</span>
+            <mat-form-field class="col-md-12">
+                <input type="password" matInput placeholder="Password" [(ngModel)]="login.password" name="password"
+                    required #passwordctrl="ngModel">
+                <span class="separator"> </span>
+            </mat-form-field>
+            <span class="help-block col-md-12 error-msg" *ngIf="loginfForm.submitted && passwordctrl.errors?.required">
+                Password is required</span>
+            <div class="form-group col-md-12">
+                    <a href="javascript" role="button" (click)="openDialog()">Pick one</a>
+                <button class="float-right" mat-flat-button color="warn">LOGIN</button>
+            </div>
+        </div>
+    </form>
+</div>

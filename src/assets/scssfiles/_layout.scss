@@ -1,0 +1,30 @@
+.login{
+    &-form{
+        width:400px;
+        height:300px;
+        border:1px solid $grey;
+        position: absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+        margin:auto;
+    }
+}
+.dailog{
+    &-sm{
+        & .mat-dialog-container{
+         width: 300px;
+         }
+     }
+     &-md{
+        & .mat-dialog-container{
+         width: 600px;
+         }
+     }
+     &-lg{
+        & .mat-dialog-container{
+         width: 900px;
+         }
+     }
+}

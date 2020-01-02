@@ -1,0 +1,16 @@
+.form{
+    &-group{
+        & .error{
+            &-msg{
+                color:$red;
+                position: relative;
+                top:-15px;
+            }
+        }
+    }
+}
+button{
+    &:focus{
+        outline:none!important;
+    }
+}
