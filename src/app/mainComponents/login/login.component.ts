@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, Validators } from '@angular/forms';
 import SimpleCrypto from "simple-crypto-js";
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Login } from '../../common/models/login.model';
 import { Variables } from "../../common/constants/variables";
 import { RegisteruserComponent } from "./registeruser/registeruser.component";
+import { ForgotpasswordComponent } from "./forgotpassword/forgotpassword.component";
 
 @Component({
   selector: 'app-login',
@@ -27,12 +28,17 @@ export class LoginComponent implements OnInit {
   }
   userLogin(login) {
     login.password = this.simpleCrypto.encrypt(login.password);
-        // this.router.navigate(['/dashboard']);
+    // this.router.navigate(['/dashboard']);
     console.log(login);
   }
-  openDialog(): void {
+  registerNewUser(): void {
     const dialogRef = this.dialog.open(RegisteruserComponent, {
-      disableClose: true,panelClass: 'dailog-md'
+      disableClose: true, panelClass: 'dailog-md'
+    });
+  }
+  forgotPassword(): void {
+    const dialogRef = this.dialog.open(ForgotpasswordComponent, {
+      disableClose: true, panelClass: 'dailog-md'
     });
   }
 

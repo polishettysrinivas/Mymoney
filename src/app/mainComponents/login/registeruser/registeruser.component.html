@@ -1,3 +1,85 @@
-<p>registeruser works!</p>
+<div class="row">
+    <div class="col-md-12">
+        <h3>New User</h3>
+        <p>Provide your details to register as a new user.</p>
+    </div>
+</div>
+<form #forgotPassword="ngForm" name="form" novalidate (ngSubmit)="forgotPassword.valid && registerNewUser(userDetails)">
+    <div class="row form-group">
+        <div class="text-input col-md-6" [class.has-error]="forgotPassword.submitted && fNamectrl.invalid">
+            <mat-form-field class="d-block form-input">
+                <input type="text" matInput placeholder="First Name" autocomplete="off" [(ngModel)]="userDetails.fName"
+                    name="fName" required #fNamectrl="ngModel">
+            </mat-form-field>
+            <span class="help-block error-msg" *ngIf="forgotPassword.submitted && fNamectrl.errors?.required">
+                First Name is required</span>
+        </div>
+        <div class="text-input col-md-6" [class.has-error]="forgotPassword.submitted && lNamectrl.invalid">
+            <mat-form-field class="d-block form-input">
+                <input type="text" matInput placeholder="Last Name" autocomplete="off" [(ngModel)]="userDetails.lName"
+                    name="lName" required #lNamectrl="ngModel">
+            </mat-form-field>
+            <span class="help-block error-msg" *ngIf="forgotPassword.submitted && lNamectrl.errors?.required">
+                Last Name is required</span>
+        </div>
+        <div class="text-input col-md-6" [class.has-error]="forgotPassword.submitted && emailctrl.invalid">
+            <mat-form-field class="d-block form-input">
+                <input type="email" matInput placeholder="Email" autocomplete="off" [(ngModel)]="userDetails.email"
+                    name="email" required #emailctrl="ngModel">
+            </mat-form-field>
+            <span class="help-block error-msg" *ngIf="forgotPassword.submitted && emailctrl.errors?.required">
+                Email is required</span>
+        </div>
+        <div class="text-input col-md-6" [class.has-error]="forgotPassword.submitted && mobilectrl.invalid">
+            <mat-form-field class="d-block form-input">
+                <input type="number" matInput placeholder="Mobile No" autocomplete="off" [(ngModel)]="userDetails.mobile"
+                    name="mobile" required #mobilectrl="ngModel">
+            </mat-form-field>
+            <span class="help-block error-msg" *ngIf="forgotPassword.submitted && mobilectrl.errors?.required">
+                Mobile No is required</span>
+        </div>
+        <div class="text-input col-md-6" [class.has-error]="forgotPassword.submitted && genderctrl.invalid">
+            <mat-form-field class="d-block form-input">
+                <mat-select name="gender" placeholder="Gender" [(ngModel)]="food" required #genderctrl="ngModel">
+                    <mat-option *ngFor="let gender of genders" [value]="gender">
+                        {{gender}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <span class="help-block error-msg" *ngIf="forgotPassword.submitted && genderctrl.errors?.required">
+                Gender is required</span>
+        </div>
+        <div class="text-input col-md-6" [class.has-error]="forgotPassword.submitted && dobctrl.invalid">
+            <mat-form-field class="d-block form-input">
 
-<button mat-button (click)="onNoClick()">No Thanks</button>
+                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth" autocomplete="off" [(ngModel)]="userDetails.dob"
+                    name="dob" required #dobctrl="ngModel">
+
+
+                   
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <span class="help-block error-msg" *ngIf="forgotPassword.submitted && dobctrl.errors?.required">
+                Date of Birth is required</span>
+        </div>
+
+
+
+
+
+
+       
+
+
+
+
+
+    </div>
+    <div class="row">
+        <div class="form-group col-md-12">
+            <button class="float-right" mat-raised-button color="warn">RECOVER</button>
+            <button class="float-right" mat-raised-button color="basic" (click)="closeModal()">CANCEL</button>
+        </div>
+    </div>
+</form>

@@ -8,21 +8,31 @@ import {
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatRippleModule
+  MatRippleModule,
+  MatSelectModule,
+  MatDatepickerModule
 } from '@angular/material';
+
+
+import {MatNativeDateModule} from '@angular/material';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
+
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { LoginComponent } from "../login/login.component";
 import { CoreRoutingModule } from "../core/core-routing.module";
 import { CoreComponent } from './core.component';
 import { RegisteruserComponent } from "../login/registeruser/registeruser.component";
+import { ForgotpasswordComponent } from "../login/forgotpassword/forgotpassword.component";
 
 
 @NgModule({
   declarations: [
     LoginComponent,
     CoreComponent,
-    RegisteruserComponent
+    RegisteruserComponent,
+    ForgotpasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -35,14 +45,24 @@ import { RegisteruserComponent } from "../login/registeruser/registeruser.compon
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatMomentDateModule
   ],
   exports: [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
-    RegisteruserComponent
+    MatSelectModule,
+    MatDatepickerModule,
+    RegisteruserComponent,
+    ForgotpasswordComponent
   ],
-  entryComponents: [RegisteruserComponent]
+  entryComponents: [
+    RegisteruserComponent,
+    ForgotpasswordComponent
+  ]
 })
 export class CoreModule { }
