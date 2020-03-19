@@ -1,0 +1,18 @@
+{
+    "login": "Login",
+    "userName": "User Name",
+    "password": "Password",
+    "email": "Email",
+    "cancel": "Cancel",
+    "recover": "Recover",
+    "forgotPwd": "Forgot Password",
+    "forgotPwdText": "Please provide your registered Email address to recover the password.",
+    "newUser": "New User",
+    "newUserText": "Provide your details to register as a new user",
+    "firstName" : "First Name",
+    "lastName" : "Last Name",
+    "mobile" : "Mobile No",
+    "gender" : "Gender",
+    "dob" : "Date of Birth",
+    "register" : "Register"
+}

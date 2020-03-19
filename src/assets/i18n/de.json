@@ -1,0 +1,18 @@
+{
+    "login": "Einloggen",
+    "userName": "Nutzername",
+    "password": "Passwort",
+    "email": "Email",
+    "cancel": "stornieren",
+    "recover": "Genesen",
+    "forgotPwd": "Passwort vergessen",
+    "forgotPwdText": "Bitte geben Sie Ihre registrierte E-Mail-Adresse ein, um das Passwort wiederherzustellen.",
+    "newUser": "Neuer Benutzer",
+    "newUserText": "Geben Sie Ihre Daten ein, um sich als neuer Benutzer zu registrieren",
+    "firstName" : "Vorname",
+    "lastName" : "Nachname",
+    "mobile" : "Handynummer",
+    "gender" : "Geschlecht",
+    "dob" : "Geburtsdatum",
+    "register" : "Registrieren"
+}
